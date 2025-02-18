@@ -24,7 +24,18 @@ export default [
   },
   { languageOptions: { globals: globals.browser } },
   { languageOptions: { globals: globals.jest } },
+  {
+    languageOptions: {
+      globals: {
+        document: true,
+        window: true,
+        process: false,
+        navigator: false,
+        Promise: true
+      }
+    }
+  },
+  eslintPluginPrettierRecommended,
   pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
-  eslintPluginPrettierRecommended
+  pluginReact.configs.flat.recommended
 ];
