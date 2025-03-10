@@ -1,0 +1,23 @@
+.dashboard {
+  background-color: aliceblue;
+}
+
+.dashboard-main-text {
+  text-align: center;
+}
+
+.dashboard-main-data {
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px;
+  justify-content: center;
+  width: 750px;
+  margin-left: 350px;
+  gap: 20px;
+}
+
+.dashboard-main-data-div {
+  text-align: left;
+  box-shadow: 2px 1px 5px red;
+  background-color: black;
+  color: white;
+}

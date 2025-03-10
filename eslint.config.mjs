@@ -2,7 +2,7 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import pluginReact from 'eslint-plugin-react';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-
+import babelParser from '@babel/eslint-parser';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
@@ -26,6 +26,17 @@ export default [
   { languageOptions: { globals: globals.jest } },
   {
     languageOptions: {
+      parser: babelParser,
+      parserOptions: {
+        requireConfigFile: false,
+        babelOptions: {
+          babelrc: false,
+          configFile: false,
+          presets: ['@babel/preset-env']
+        }
+      },
+      ecmaVersion: 5,
+      sourceType: 'script',
       globals: {
         document: true,
         window: true,
